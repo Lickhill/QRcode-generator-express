@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="/css/style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<form method="post" action="/">
+				<p>Enter a text or url.</p>
+				<input
+					type="text"
+					name="text"
+					class="urltext"
+					placeholder="Type a text or paste a url"
+					autocomplete="off"
+				/><br />
+				<input
+					style="
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+					"
+					type="file"
+					name="file"
+					class="filing"
+					accept=".txt,.doc,.docx,.pdf,.jpeg,,.jpg,.xls,.xlsx,.ppt,.pptx,.csv,.rtf,.odt,.ods,.odp,.zip,.rar,.tar,.gz,.7z,.png,"
+				/><br />
+				<% if(imageofqr === "" && filetext===""){ %>
+				<div id="img">
+					<img src="" alt="" id="imgsrc" />
+				</div>
+				<% } else if(filetext!==""){ %>
+				<div id="img">
+					<img src="<%= filetext %>" alt="" id="imgsrc" />
+				</div>
+				<% } else { %>
+				<div id="img">
+					<img src="<%= imageofqr %>" alt="" id="imgsrc" />
+				</div>
+				<% } %>
+
+				<button class="button-57" type="submit" name="submit">
+					<span class="text1">Generate QR code</span>
+					<span>click</span>
+				</button>
+			</form>
+		</div>
+	</body>
+</html>
